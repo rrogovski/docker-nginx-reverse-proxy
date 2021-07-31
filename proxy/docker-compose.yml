@@ -1,0 +1,18 @@
+version: '2'
+services:
+  proxy:
+    build: ./
+    networks:
+      - web01
+      - web02
+    ports:
+      - 80:80
+      - 443:443
+
+networks:
+  web01:
+    external: true
+    name: web01_default
+  web02:
+    external: true
+    name: web02_default
